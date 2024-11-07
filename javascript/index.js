@@ -1,5 +1,4 @@
 function currentTime(){
-
 let londonElement = document.querySelector("#london")
 let londonDateElement = londonElement.querySelector(".date")
 let londonTimeElement =londonElement.querySelector(".time")
@@ -18,3 +17,20 @@ parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]")
 }
 currentTime()
 setInterval(currentTime, 1000)
+
+
+function updateCity(event){
+    let cityTimeZone = event.target.value
+    let cityName = cityTimeZone.split("/")[1]
+    let cityTime = moment().tz(cityTimeZone)
+    let citiesElemet = document.querySelector("#cities")
+    citiesElemet.innerHTML = 
+    ` <div class="city">
+        <h2>${cityName}</h2>
+        <div class="date">${cityTime.format("Do MMMM YYYY")}</div>
+        <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small></div>
+       </div>`
+}
+
+let citySelect = document.querySelector("#city")
+citySelect.addEventListener("change", updateCity)
