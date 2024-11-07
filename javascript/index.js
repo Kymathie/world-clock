@@ -14,6 +14,15 @@ let parisTime = moment().tz("Europe/Paris")
 
 parisDateElement.innerHTML = parisTime.format("Do MMMM YYYY")
 parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]")
+
+let singaporeElement = document.querySelector("#singapore")
+let singaporeDateElement = singaporeElement.querySelector(".date")
+let singaporeTimeElement = singaporeElement.querySelector(".time")
+let singaporeTime = moment().tz("Asia/Singapore")
+
+singaporeDateElement.innerHTML = singaporeTime.format("Do MMMM YYYY")
+singaporeTimeElement.innerHTML = singaporeTime.format("h:mm:ss [<small>]A[</small>]")
+
 }
 currentTime()
 setInterval(currentTime, 1000)
