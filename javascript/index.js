@@ -32,7 +32,8 @@ function updateCity(event){
         <h2>${cityName}</h2>
         <div class="date">${cityTime.format("Do MMMM YYYY")}</div>
         <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small></div>
-       </div>`
+       </div>
+       <a href="/">Back to all cities</a>`
 }
 
 let citySelect = document.querySelector("#city")
